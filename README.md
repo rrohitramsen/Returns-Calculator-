@@ -3,7 +3,7 @@ BestDeals Bank wants to build a Returns calculator for its bankers by subtractin
 
 Simple Compound Interest, Return
 
-![Simple CI ](returns_calculator/src/main/resources/images/SimpleCI.png "Simple CI")
+![Simple CI](/src/main/resources/images/SimpleCI.png "Simple CI")
 
 Annual Simple Interest, return
 
