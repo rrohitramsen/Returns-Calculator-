@@ -47,7 +47,7 @@ public class SwaggerConfig {
                 "BestDeals Bank Deals API",
                 "1.0",
                 "Terms of service",
-                new Contact("Rohit Kumar", "https://projects.spring.io/spring-boot/", "rrohit.ramsen@mgail.com"),
+                new Contact("Rohit Kumar", "https://projects.spring.io/spring-boot/", "rrohit.ramsen@gmail.com"),
                 "Apache License Version 2.0",
                 "https://www.apache.org/licenses/LICENSE-2.0");
         return apiInfo;
