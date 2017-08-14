@@ -20,6 +20,7 @@ Please bring a running application, code and unit tests to the interview for con
 
 * Spring Boot
 * Swagger UI
+* Rest
 * Java 8
 * Git
 
@@ -39,7 +40,7 @@ $ mvn spring-boot:run
 
 ```
 
-### To use Returns Calculator, Please click on the link below,
+### For Returns Calculator Rest API, Please click on the link below,
 
 * [ReturnsCalculator](http://localhost:8080/swagger-ui.html).
 
