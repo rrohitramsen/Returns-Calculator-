@@ -16,16 +16,35 @@ Please design and deliver a persistent server-side Java application with appropr
 Please bring a running application, code and unit tests to the interview for consideration for the role.
 
 
+#### Technology Stack
+
+* Spring Boot
+* Swagger UI
+* Java 8
+* Git
+
+### Clone the repository at your local machine.
+
+```
+$ git clone https://github.com/rrohitramsen/returns_calculator.git
+```
+
 
 ### How to run the `Returns Calculator`
 
 
 ```
-$  mvn spring-boot:run
+$ cd returns_calculator
+$ mvn spring-boot:run
 
 ```
 
-### Returns Calculator UI.
+### To use Returns Calculator, Please click on the link below,
 
-* [ReturnsCalculator](http://localhost:8080) .
+* [ReturnsCalculator](http://localhost:8080/swagger-ui.html).
+
+![Swagger UI](/src/main/resources/images/swagger_ui.png "Swagger UI")
+![Swagger UI](/src/main/resources/images/simple_interest.png "Simple Interest")
+![Swagger UI](/src/main/resources/images/compound_interest.png "Compound Interest")
+![Swagger UI](/src/main/resources/images/accumulate_returns.png "Accumulate Returns")
 
