@@ -63,12 +63,12 @@ public class DealsAPITest {
         this.mockMvc.perform(post("/bestDeals/deals/compoundInterest")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content("{" +
-                        "  \"annualInterestRate\": 0," +
+                        "  \"annualInterestRate\": 0.02," +
                         "  \"clientId\": 1," +
-                        "  \"currencyType\": \"GBP\"," +
-                        "  \"interestCompoundPerYear\": 0," +
-                        "  \"numberOfYears\": 0," +
-                        "  \"principalAmount\": 0" +
+                        "  \"currencyType\": \"USD\"," +
+                        "  \"interestCompoundPerYear\": 1," +
+                        "  \"numberOfYears\": 1," +
+                        "  \"principalAmount\": 100" +
                         "}"))
                 .andExpect(status().is2xxSuccessful());
     }

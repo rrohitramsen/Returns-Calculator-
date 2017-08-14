@@ -26,12 +26,22 @@ public class DealServiceImpl implements DealService {
 
         LOGGER.info("Calculating Simple Interest "+ simpleInterestRequest);
 
-        double simpleInterest = simpleInterestRequest.getPrincipalAmount() *
-                    simpleInterestRequest.getAnnualInterestRate() *
-                    simpleInterestRequest.getNumberOfYears();
+        double simpleInterest = computeSimpleInterest(simpleInterestRequest);
 
         dealsRepository.saveDeal(simpleInterestRequest.getClientId(),
                 convertIntoUSDollar(simpleInterestRequest.getCurrencyType(), simpleInterest));
+    }
+
+    /**
+     *
+     * @param simpleInterestRequest
+     * @return Simple Interest.
+     */
+    private double computeSimpleInterest(SimpleInterestRequest simpleInterestRequest) {
+
+        return simpleInterestRequest.getPrincipalAmount() *
+                        simpleInterestRequest.getAnnualInterestRate() *
+                        simpleInterestRequest.getNumberOfYears();
     }
 
     @Override
@@ -39,13 +49,24 @@ public class DealServiceImpl implements DealService {
 
         LOGGER.info("Calculating Compound Interest "+ compoundInterestRequest);
 
-        double compoundInterest = compoundInterestRequest.getPrincipalAmount() *
-                Math.pow((1 + compoundInterestRequest.getAnnualInterestRate()/ compoundInterestRequest.getInterestCompoundPerYear()),
-                        compoundInterestRequest.getAnnualInterestRate() * compoundInterestRequest.getInterestCompoundPerYear())
-                - compoundInterestRequest.getPrincipalAmount();
+        double compoundInterest = computeCompoundInterest(compoundInterestRequest);
 
         dealsRepository.saveDeal(compoundInterestRequest.getClientId(),
                 convertIntoUSDollar(compoundInterestRequest.getCurrencyType(), compoundInterest));
+    }
+
+    /**
+     *
+     * @param compoundInterestRequest
+     * @return Compound Interest
+     */
+    private double computeCompoundInterest(CompoundInterestRequest compoundInterestRequest) {
+
+        return compoundInterestRequest.getPrincipalAmount() *
+                    Math.pow((1 + compoundInterestRequest.getAnnualInterestRate()/ compoundInterestRequest.getInterestCompoundPerYear()),
+                            compoundInterestRequest.getNumberOfYears() * compoundInterestRequest.getInterestCompoundPerYear())
+                    - compoundInterestRequest.getPrincipalAmount();
+
     }
 
     @Override
@@ -85,14 +106,19 @@ public class DealServiceImpl implements DealService {
         switch (currencyType) {
 
             case AUD:
-                returns *=   0.79151;
+                returns *= 0.79151;
                 break;
 
             case EUR:
-                 returns *= 1.18260;
+                returns *= 1.18260;
+                break;
 
             case GBP:
                 returns *= 1.30101;
+                break;
+
+            case USD:
+                return returns;
 
         }
 

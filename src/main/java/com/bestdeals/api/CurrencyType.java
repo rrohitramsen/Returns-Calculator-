@@ -7,7 +7,8 @@ public enum CurrencyType {
 
     GBP("GBP"),
     EUR("EURO"),
-    AUD("Australian Dollar");
+    AUD("Australian Dollar"),
+    USD("US Dollar");
 
     private String name;
 

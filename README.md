@@ -8,8 +8,13 @@ Simple Compound Interest, Return
 Annual Simple Interest, return
 
 ```
-   I = P * r * N
+   I = P * r * t
 ```
+
+* P = the principal investment amount (the initial deposit or loan amount)
+* r = the annual interest rate (decimal i.e if rate of interest is 5 then in decimal it will 5/100 = 0.05)
+* n = the number of times that interest is compounded per year
+* t = the number of years the money is invested or borrowed for
 
 The returns should multiplied with the currency’s Fx Rate to USD to calculate the $ returns. The tool should be extensible so that it can calculate the returns of a number of different kinds of deals with different inputs. The tool will also allow users to dynamically calculate the returns for every client by accumulating the returns in dollars across all its deals.
 Please design and deliver a persistent server-side Java application with appropriate RESTFul Webservices for such an application. The solution will be graded on the basis of its design extensibility, Unit Testing, code quality, performance and appropriate usage of latest java developments.

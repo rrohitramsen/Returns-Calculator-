@@ -20,7 +20,7 @@ public class SimpleInterestRequest {
     @ApiModelProperty(notes = "the number of years the money is invested or borrowed for", required = true)
     private int numberOfYears;
 
-    @ApiModelProperty(notes = "Currency Type (GBP, EUR, AUD) supported. By Default GBP")
+    @ApiModelProperty(notes = "Currency Type (GBP, EUR, AUD, USD) supported. By Default GBP")
     private CurrencyType currencyType = CurrencyType.GBP;
 
     public SimpleInterestRequest() {
